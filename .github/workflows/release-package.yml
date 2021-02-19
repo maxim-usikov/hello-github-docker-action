@@ -7,6 +7,15 @@ on:
     types:
       - created
 
+env:
+  DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  REGISTRY: ghcr.io
+  OWNER: maxim-usikov
+  IMAGE_NAME: hello-github-docker-action
+  IMAGE_TAG: v1.0.0-beta.0
+
+
 jobs:
   build:
     name: Build
@@ -14,8 +23,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build image
-        shell: bash
         run: .bin/build_docker_image.sh
+        shell: bash
 
   push-image:
     name: Push
@@ -24,10 +33,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Push image
-        env:
-          DOCKER_USER: ${{ secrets.DOCKER_USER }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-          REGISTRY: ghcr.io
-          OWNER: maxim-usikov
-        shell: bash
         run: .bin/push_docker_image.sh
+        shell: bash

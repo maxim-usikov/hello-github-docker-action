@@ -1,20 +1,18 @@
 #!/usr/bin/env bash
 
-set -eo pipefail
+set -eou pipefail
 
-USERNAME="${DOCKER_USER}"
-CR_PAT="${DOCKER_PASSWORD}"
+# DOCKER_USERNAME="${DOCKER_USERNAME}"
+# DOCKER_PASSWORD="${DOCKER_PASSWORD}"
 
-REGISTRY=""
-OWNER=""
+# REGISTRY=""
+# OWNER=""
 
-IMAGE_NAME="hello-github-docker-action"
-IMAGE_TAG="v1.0.0-beta.0"
+# IMAGE_NAME="hello-github-docker-action"
+# IMAGE_TAG="v1.0.0-beta.0"
 
-printenv
-
-printf "${CR_PAT}" | docker login "${REGISTRY}" \
-  --username "${USERNAME}" \
+printf "${DOCKER_PASSWORD}" | docker login "${REGISTRY}" \
+  --username "${DOCKER_USERNAME}" \
   --password-stdin
 
 docker tag "${IMAGE_NAME}:${IMAGE_TAG}" "${REGISTRY}/${OWNER}/${IMAGE_NAME}:${IMAGE_TAG}"
