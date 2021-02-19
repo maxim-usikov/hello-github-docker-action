@@ -10,6 +10,8 @@ on:
 env:
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  DOCKER_FILE: .config/docker/Dockerfile
+  DOCKER_BUILD_PATH: .
   REGISTRY: ghcr.io
   OWNER: maxim-usikov
   IMAGE_NAME: hello-github-docker-action
