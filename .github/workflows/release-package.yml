@@ -1,27 +1,30 @@
-name: Action Package
+name: Release Package
 
 on:
+  # temporary
+  push:
   release:
-    types: [created]
+    types:
+      - created
+
+env:
+  DOCKER_USER: ${{ secrets.DOCKER_USER }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: .bin/build_docker_image.sh
+      - name: Build image
+        run: .bin/build_docker_image.sh
+        shell: bash
 
-#  push-image:
-#    needs: build
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
-#      - run: .bin/push_docker_image.sh
-
-
-#    steps:
-#      - name: Hello world action
-#        with: # Set the secret as an input
-#          super_secret: ${{ secrets.SuperSecret }}
-#        env: # Or as an environment variable
-#          super_secret: ${{ secrets.SuperSecret }}
+  push-image:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Push image
+        run: .bin/push_docker_image.sh
+        shell: bash

@@ -1,7 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-USERNAME=""
-CR_PAT=""
+set -eo pipefail
+
+USERNAME="${DOCKER_USER}"
+CR_PAT="${DOCKER_PASSWORD}"
 
 REGISTRY="ghcr.io"
 OWNER=""

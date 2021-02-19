@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -eo pipefail
 
 DOCKER_FILE=".config/docker/Dockerfile"
 DOCKER_BUILD_PATH="."
