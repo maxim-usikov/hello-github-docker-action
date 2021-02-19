@@ -17,8 +17,8 @@ jobs:
         env:
           DOCKER_FILE: ".config/docker/Dockerfile"
           DOCKER_BUILD_PATH: "."
-        run: .bin/build_docker_image.sh
         shell: bash
+        run: .bin/build_docker_image.sh
 
   push-image:
     name: Push
@@ -32,5 +32,5 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
           REGISTRY: ghcr.io
           OWNER: maxim-usikov
-        run: .bin/push_docker_image.sh
         shell: bash
+        run: .bin/push_docker_image.sh

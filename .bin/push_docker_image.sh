@@ -11,6 +11,8 @@ OWNER=""
 IMAGE_NAME="hello-github-docker-action"
 IMAGE_TAG="v1.0.0-beta.0"
 
+printenv
+
 printf "${CR_PAT}" | docker login "${REGISTRY}" \
   --username "${USERNAME}" \
   --password-stdin
