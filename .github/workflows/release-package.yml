@@ -17,23 +17,20 @@ env:
   IMAGE_NAME: hello-github-docker-action
   IMAGE_TAG: v1.0.0-beta.0
 
-
 jobs:
-  build:
-    name: Build
+  push:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build image
-        run: .bin/build_docker_image.sh
+
+      - name: Build
+        run: .bin/docker_build.sh
         shell: bash
 
-  push-image:
-    name: Push
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Push image
-        run: .bin/push_docker_image.sh
+      - name: Login
+        run: .bin/docker_login.sh
+        shell: bash
+
+      - name: Push
+        run: .bin/docker_push.sh
         shell: bash
