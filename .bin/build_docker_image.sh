@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
-set -eo pipefail
+set -eou pipefail
 
-DOCKER_FILE=".config/docker/Dockerfile"
-DOCKER_BUILD_PATH="."
+if [[ -z "${DOCKER_FILE}" ]]; then
+  DOCKER_FILE=".config/docker/Dockerfile"
+fi
+
+if [[ -z "${DOCKER_BUILD_PATH}" ]]; then
+  DOCKER_BUILD_PATH="."
+fi
 
 IMAGE_NAME="hello-github-docker-action"
 IMAGE_TAG="v1.0.0-beta.0"
