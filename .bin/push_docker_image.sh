@@ -5,8 +5,8 @@ set -eo pipefail
 USERNAME="${DOCKER_USER}"
 CR_PAT="${DOCKER_PASSWORD}"
 
-REGISTRY="ghcr.io"
-OWNER="maxim-usikov"
+REGISTRY=""
+OWNER=""
 
 IMAGE_NAME="hello-github-docker-action"
 IMAGE_TAG="v1.0.0-beta.0"
