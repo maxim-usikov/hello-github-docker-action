@@ -2,4 +2,5 @@
 
 ## Example usage
 
-uses: maxim-usikov/hello-world-docker-action@v1
+  uses: 
+    maxim-usikov/hello-world-docker-action@v1
