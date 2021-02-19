@@ -6,7 +6,7 @@ USERNAME="${DOCKER_USER}"
 CR_PAT="${DOCKER_PASSWORD}"
 
 REGISTRY="ghcr.io"
-OWNER=""
+OWNER="maxim-usikov"
 
 IMAGE_NAME="hello-github-docker-action"
 IMAGE_TAG="v1.0.0-beta.0"
