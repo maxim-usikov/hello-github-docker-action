@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eou pipefail
+set -eo pipefail
 
 if [[ -z "${DOCKER_FILE}" ]]; then
   DOCKER_FILE=".config/docker/Dockerfile"
