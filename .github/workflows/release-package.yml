@@ -1,8 +1,6 @@
 name: Release Package
 
 on:
-  # temporary
-  push:
   release:
     types:
       - created
