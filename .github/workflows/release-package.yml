@@ -14,9 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build image
-        env:
-          DOCKER_FILE: ".config/docker/DockerfileChange"
-          DOCKER_BUILD_PATH: "."
         shell: bash
         run: .bin/build_docker_image.sh
 
