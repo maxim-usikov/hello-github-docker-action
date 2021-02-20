@@ -1,11 +1,10 @@
+name: sgtt
 on: [push]
 
 
 jobs:
-  hello_world_job:
+  lint:
     runs-on: ubuntu-latest
-    name: A job to commitlint
     steps:
     - name: Commitlint
-      id: commitlint
       uses: severgroup-tt/actions-commitlint@main
