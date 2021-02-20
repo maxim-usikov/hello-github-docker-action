@@ -1,15 +1,7 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+name: 'hello-github-docker-action'
+author: 'maxim-usikov'
+description: 'Hello GitHub docker action'
+
 runs:
   using: 'docker'
-  image: 'Dockerfile'
-  args:
-    - ${{ inputs.who-to-greet }}
+  image: 'docker://ghcr.io/maxim-usikov/hello-github-docker-action:latest'
