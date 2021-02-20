@@ -13,4 +13,4 @@ COPY .config/commitlint/commitlint.config.js ./commitlint.config.js
 
 COPY .bin/entrypoint.sh ./entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/commitlint/entrypoint.sh"]
