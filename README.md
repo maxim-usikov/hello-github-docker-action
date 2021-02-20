@@ -1,6 +1,5 @@
 # Hello world docker action
 
-
 ## Example usage
 
   uses: 
