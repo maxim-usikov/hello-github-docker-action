@@ -1,0 +1,10 @@
+name: hgda
+on: [push]
+
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Commitlint
+      uses: maxim-usikov/hello-github-docker-action@main
