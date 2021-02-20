@@ -7,5 +7,5 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - name: Commitlint
-      uses: severgroup-tt/actions-commitlint@main
+      - uses: actions/checkout@v2
+      - uses: severgroup-tt/actions-commitlint@main

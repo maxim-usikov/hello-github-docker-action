@@ -7,5 +7,5 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - name: Commitlint
-      uses: maxim-usikov/hello-github-docker-action@main
+      - uses: actions/checkout@v2
+      - uses: maxim-usikov/hello-github-docker-action@main
